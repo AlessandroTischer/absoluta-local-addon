@@ -10,8 +10,6 @@ arch:
   - aarch64
   - armv7
 options:
-  JAVA_OPTS: ""
-  CUSTOM_ENV: ""
   MQTT_ADDRESS: ""
   MQTT_PORT: "1883"
   MQTT_USERNAME: ""
@@ -20,8 +18,6 @@ options:
   ALARM_PIN: ""
   ALARM_PORT: "3064"
 schema:
-  JAVA_OPTS: "str?"
-  CUSTOM_ENV: "str?"
   MQTT_ADDRESS: "str?"
   MQTT_PORT: "str?"
   MQTT_USERNAME: "str?"
