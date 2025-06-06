@@ -1,0 +1,31 @@
+name: "Absoluta Local MQTT Bridge"
+description: "Absoluta Local MQTT Bridge"
+version: "1.0.0"
+slug: "absoluta_local"
+startup: services
+init: false
+boot: auto
+arch:
+  - amd64
+  - aarch64
+  - armv7
+options:
+  JAVA_OPTS: ""
+  CUSTOM_ENV: ""
+  MQTT_ADDRESS: ""
+  MQTT_PORT: "1883"
+  MQTT_USERNAME: ""
+  MQTT_PASSWORD: ""
+  ALARM_ADDRESS: ""
+  ALARM_PIN: ""
+  ALARM_PORT: "3064"
+schema:
+  JAVA_OPTS: "str?"
+  CUSTOM_ENV: "str?"
+  MQTT_ADDRESS: "str?"
+  MQTT_PORT: "str?"
+  MQTT_USERNAME: "str?"
+  MQTT_PASSWORD: "str?"
+  ALARM_ADDRESS: "str?"
+  ALARM_PIN: "str?"
+  ALARM_PORT: "str?"
