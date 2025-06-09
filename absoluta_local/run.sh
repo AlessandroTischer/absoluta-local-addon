@@ -1,16 +1,18 @@
 #!/bin/bash
 set -e
 
-# Export environment variables from Home Assistant config
-export JAVA_OPTS="${JAVA_OPTS}"
-export CUSTOM_ENV="${CUSTOM_ENV}"
-export MQTT_ADDRESS="${MQTT_ADDRESS}"
-export MQTT_PORT="${MQTT_PORT}"
-export MQTT_USERNAME="${MQTT_USERNAME}"
-export MQTT_PASSWORD="${MQTT_PASSWORD}"
-export ALARM_ADDRESS="${ALARM_ADDRESS}"
-export ALARM_PIN="${ALARM_PIN}"
-export ALARM_PORT="${ALARM_PORT}"
+# Parse /data/options.json and export variables
+if [ -f /data/options.json ]; then
+    export MQTT_ADDRESS=$(jq -r '.MQTT_ADDRESS // empty' /data/options.json)
+    export MQTT_PORT=$(jq -r '.MQTT_PORT // empty' /data/options.json)
+    export MQTT_USERNAME=$(jq -r '.MQTT_USERNAME // empty' /data/options.json)
+    export MQTT_PASSWORD=$(jq -r '.MQTT_PASSWORD // empty' /data/options.json)
+    export ALARM_ADDRESS=$(jq -r '.ALARM_ADDRESS // empty' /data/options.json)
+    export ALARM_PIN=$(jq -r '.ALARM_PIN // empty' /data/options.json)
+    export ALARM_PORT=$(jq -r '.ALARM_PORT // empty' /data/options.json)
+else
+    echo "/data/options.json not found! Environment variables will not be set."
+fi
 
 # Run the Java application
 exec java $JAVA_OPTS -cp "app.jar:lib/jars/*:secured/*" Application
