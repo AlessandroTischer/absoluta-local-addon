@@ -10,6 +10,7 @@ if [ -f /data/options.json ]; then
     export ALARM_ADDRESS=$(jq -r '.ALARM_ADDRESS // empty' /data/options.json)
     export ALARM_PIN=$(jq -r '.ALARM_PIN // empty' /data/options.json)
     export ALARM_PORT=$(jq -r '.ALARM_PORT // empty' /data/options.json)
+    export LOG_LEVEL=$(jq -r '.LOG_LEVEL // empty' /data/options.json)
 else
     echo "/data/options.json not found! Environment variables will not be set."
 fi

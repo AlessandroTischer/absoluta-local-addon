@@ -17,6 +17,7 @@ options:
   ALARM_ADDRESS: ""
   ALARM_PIN: ""
   ALARM_PORT: "3064"
+  LOG_LEVEL: "WARNING"
 schema:
   MQTT_ADDRESS: "str?"
   MQTT_PORT: "str?"
@@ -25,3 +26,4 @@ schema:
   ALARM_ADDRESS: "str?"
   ALARM_PIN: "str?"
   ALARM_PORT: "str?"
+  LOG_LEVEL: "str?"
