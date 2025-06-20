@@ -1,6 +1,6 @@
 name: "Absoluta Local MQTT Bridge"
 description: "Absoluta Local MQTT Bridge"
-version: "1.0.0"
+version: "1.0.4-beta"
 slug: "absoluta_local"
 startup: services
 init: false
